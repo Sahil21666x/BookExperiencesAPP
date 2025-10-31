@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
+
+@import "tailwindcss";
+
+@layer utilities {
+  .hover-elevate {
+    @apply transition-all duration-200;
+  }
+  
+  .hover-elevate:hover {
+    background-color: color-mix(in srgb, currentColor 5%, transparent);
+  }
+  
+  .active-elevate-2:active {
+    background-color: color-mix(in srgb, currentColor 10%, transparent);
+  }
+  
+  .no-default-hover-elevate:hover {
+    background-color: inherit;
+  }
+  
+  .no-default-active-elevate:active {
+    background-color: inherit;
+  }
+}
