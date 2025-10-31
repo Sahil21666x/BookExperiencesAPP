@@ -1,8 +1,9 @@
-import { Router, Request, Response } from "express";
-import { ExperienceModel } from "./models/Experience";
-import { SlotModel } from "./models/Slot";
-import { BookingModel } from "./models/Booking";
-import { insertBookingSchema } from "./shared/schema";
+import Router from "express";
+import type { Request, Response } from 'express'
+import  { ExperienceModel } from "./models/Experience.js";
+import { SlotModel } from "./models/Slot.js";
+import { BookingModel } from "./models/Booking.js";
+import { insertBookingSchema } from "./shared/schema.js";
 import { z } from "zod";
 
 const router = Router();
@@ -27,7 +28,7 @@ router.get("/api/experiences", async (req: Request, res: Response) => {
 // GET /api/experiences/:id - Get experience by ID with slots
 router.get("/api/experiences/:id", async (req: Request, res: Response) => {
   try {
-    const id = parseInt(req.params.id);
+    const id = parseInt(req.params.id ?? "0");
     
     if (isNaN(id)) {
       return res.status(400).json({ error: "Invalid experience ID" });

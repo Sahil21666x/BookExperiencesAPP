@@ -1,5 +1,5 @@
-import { ExperienceModel } from "./models/Experience";
-import { SlotModel } from "./models/Slot";
+import { ExperienceModel } from "./models/Experience.js";
+import { SlotModel } from "./models/Slot.js";
 
 export async function seedDatabase() {
   try {
